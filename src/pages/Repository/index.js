@@ -81,17 +81,17 @@ export default class Repository extends Component {
     });
   };
 
-  handlePage = (action) => {
+  handlePage = async (action) => {
     const { pageIndex } = this.state;
-    this.setState({
+    await this.setState({
       pageIndex: action === 'next' ? pageIndex + 1 : pageIndex - 1,
     });
     this.getIssues();
   };
 
-  handleFilter = (e) => {
+  handleFilter = async (e) => {
     const { value } = e.target;
-    this.setState({ filter: value });
+    await this.setState({ filter: value });
     this.getIssues();
   };
 
